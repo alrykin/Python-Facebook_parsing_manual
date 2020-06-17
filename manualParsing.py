@@ -29,11 +29,11 @@ def get_url_List(driver,html):
     user_adress = []
     for adr in driver.find_elements_by_class_name('_3dlf'):
         adress.append(adr.get_attribute('href'))
-    #print(adress)
+    print(adress)
     for mark_list in adress:
         driver.get(mark_list)
         i = 0
-        while i<:
+        while i<50:
             try:
                 print('+')
                 driver.find_element_by_link_text('Ещё').click()
@@ -46,7 +46,7 @@ def get_url_List(driver,html):
             if user_adress.count(url) == 0:
                 user_adress.append(url.get_attribute('href'))
         print(user_adress)
-     return adress
+    return adress
 
 
 
